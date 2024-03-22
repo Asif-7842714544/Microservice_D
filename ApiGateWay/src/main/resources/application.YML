@@ -1,0 +1,13 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ApiGateWay
+  cloud:
+    gateway:
+      routes:
+        - id: QuestionService
+          uri: http://admin.mshome.net:8082
+          predicates:
+            - Path= /question/**
